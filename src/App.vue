@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 
     <!-- Produccion -->
     <div class="section">
@@ -13,14 +11,14 @@
         <div class="row">
           <div class="column">
             <figure class="image is-64x64">
-              <img src="https://bulma.io/images/placeholders/64x64.png">
+              <img src="./assets/tractor.png" style="height: 100%;">
             </figure>
             <p class="title">20</p>
             <p class="subtitle is-6">aparcados</p>
           </div>
           <div class="column">
             <figure class="image is-64x64">
-              <img src="https://bulma.io/images/placeholders/64x64.png">
+              <img src="./assets/tractor2.png">
             </figure>
             <p class="title">120</p>
             <p class="subtitle is-6">en campo</p>
@@ -33,7 +31,7 @@
         <div class="row">
           <div class="column">
             <figure class="image is-64x64">
-              <img src="https://bulma.io/images/placeholders/64x64.png">
+              <img src="./assets/siembra.png">
             </figure>
             <p class="title">12</p>
             <p class="title is-6">hectáreas</p>
@@ -41,7 +39,7 @@
           </div>
           <div class="column">
             <figure class="image is-64x64">
-              <img src="https://bulma.io/images/placeholders/64x64.png">
+              <img src="./assets/cosecha.png">
             </figure>
             <p class="title">15.5</p>
             <p class="title is-6">toneladas</p>
@@ -63,24 +61,24 @@
         <div class="row">
           <div class="column">
             <figure class="image is-64x64">
-              <img src="https://bulma.io/images/placeholders/64x64.png">
+              <img src="./assets/cerdo.png">
             </figure>
             <p class="title is-5">1200</p>
             <p class="subtitle is-7">granja</p>
           </div>
           <div class="column">
             <figure class="image is-64x64">
-              <img src="https://bulma.io/images/placeholders/64x64.png">
+              <img src="./assets/cerdo2.png">
             </figure>
             <p class="title is-5">750</p>
             <p class="subtitle is-7">procesados</p>
           </div>
           <div class="column">
             <figure class="image is-64x64">
-              <img src="https://bulma.io/images/placeholders/64x64.png">
+              <img src="./assets/cerdo3.png">
             </figure>
             <p class="title is-5">12500</p>
-            <p class="subtitle is-7">embutidos</p>
+            <p class="subtitle is-7">empacados</p>
           </div>
         </div>
 
@@ -90,7 +88,7 @@
     <!-- Ventas -->
     <div class="section">
       <p class="title">Ventas</p>
-      <div class="box">1</div>
+      <div class="box"></div>
     </div>
 
   </div>
