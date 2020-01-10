@@ -143,16 +143,31 @@ import Clock from './components/Clock.vue'
 export default {
   data() {
     return {
-      trucks: {
-        parked: { value: 20 },
-        used: { value: 120 }
+     trucks: {
+        parked: { value: 20,  min: 0, default:20 },
+        used:   { value: 120, max: 140, default:120 },
+      },
+      field: {
+        sowing:  {value: 12},
+        harvest: {value: 15.5},
+      },
+      pork: {
+        farm:      {value: 1200},
+        processed: {value: 750},
+        packed:    {value: 12500},
+      },
+      sales: {
+        a: {value: 1200 },
+        b: {value: 2340 },
+        c: {value: 3720 },
+        d: {value: 708 },
       }
     };
   },
       
   created() {
       console.log(Clock)
-        Clock.startInterval(this.trucks.parked, 3000, 1)
+        Clock.startInterval(this.trucks.parked, 3000, -1)
         Clock.startInterval(this.trucks.used, 3000, 1)
   },
   }
