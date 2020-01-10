@@ -1,6 +1,8 @@
 <template>
   <div id="app">
 
+    <img class="logo" src="./assets/logo.png">
+
     <!-- Produccion -->
     <div class="section">
 
@@ -11,17 +13,17 @@
         <div class="row">
           <div class="column">
             <figure class="image is-64x64">
-              <img src="./assets/tractor.png" style="height: 100%;">
+              <img src="./assets/tractor.png" style="height: 100%; opacity: .5;">
             </figure>
-            <p class="title">20</p>
-            <p class="subtitle is-6">aparcados</p>
+            <p class="title">{{ trucks.parked.value }}</p>
+            <p class="subtitle is-6">Aparcados</p>
           </div>
           <div class="column">
-            <figure class="image is-64x64">
+            <figure class="image is-64x64" style="opacity: .5;">
               <img src="./assets/tractor2.png">
             </figure>
-            <p class="title">120</p>
-            <p class="subtitle is-6">en campo</p>
+            <p class="title">{{ trucks.used.value }}</p>
+            <p class="subtitle is-6">En campo</p>
           </div>
         </div>
       </div>
@@ -31,19 +33,19 @@
         <div class="row">
           <div class="column">
             <figure class="image is-64x64">
-              <img src="./assets/siembra.png">
+              <img src="./assets/siembra.png" style="opacity: .5;">
             </figure>
             <p class="title">12</p>
             <p class="title is-6">hectáreas</p>
-            <p class="subtitle is-6">siembra</p>
+            <p class="subtitle is-6">Siembra</p>
           </div>
           <div class="column">
             <figure class="image is-64x64">
-              <img src="./assets/cosecha.png">
+              <img src="./assets/cosecha.png" style="opacity: .5;">
             </figure>
             <p class="title">15.5</p>
             <p class="title is-6">toneladas</p>
-            <p class="subtitle is-6">cosecha</p>
+            <p class="subtitle is-6">Cosecha</p>
           </div>
         </div>
       </div>
@@ -64,21 +66,21 @@
               <img src="./assets/cerdo.png">
             </figure>
             <p class="title is-5">1200</p>
-            <p class="subtitle is-7">granja</p>
+            <p class="subtitle is-7">Granja</p>
           </div>
           <div class="column">
             <figure class="image is-64x64">
               <img src="./assets/cerdo2.png">
             </figure>
             <p class="title is-5">750</p>
-            <p class="subtitle is-7">procesados</p>
+            <p class="subtitle is-7">Procesados</p>
           </div>
           <div class="column">
             <figure class="image is-64x64">
               <img src="./assets/cerdo3.png">
             </figure>
             <p class="title is-5">12500</p>
-            <p class="subtitle is-7">empacados</p>
+            <p class="subtitle is-7">Empacados</p>
           </div>
         </div>
 
@@ -87,28 +89,86 @@
 
     <!-- Ventas -->
     <div class="section">
-      <p class="title">Ventas</p>
-      <div class="box"></div>
+      <p class="title">Puntos de Venta</p>
+      <div class="box">
+        <div class="row">
+          <div class="column">
+            <!-- <p class="title is-6">$ 1.200.134 M</p> -->
+            <p class="title is-4">$ 1.200 M</p>
+            <p class="subtitle is-6">Antioquia</p>
+          </div>
+          <div class="column">
+            <!-- <p class="title is-6">$ 2.340.237 M</p> -->
+            <p class="title is-4">$ 2.340 M</p>
+            <p class="subtitle is-6">Santander</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <!-- <p class="title is-6">$ 3.720.405 M</p> -->
+            <p class="title is-4">$ 3.720 M</p>
+            <p class="subtitle is-6">Cundinamarca</p>
+          </div>
+          <div class="column">
+            <!-- <p class="title is-6">$ 708.345 M</p> -->
+            <p class="title is-4">$ 708 M</p>
+            <p class="subtitle is-6">Casanare</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <!-- <p class="title is-6">$ 1.308.065 M</p> -->
+            <p class="title is-4">$ 7,968 M</p>
+            <p class="subtitle is-6">Total</p>
+          </div>
+        </div>
+      </div>
     </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <a href="https://wigilabs.com/">WigiLabs</a> ♡ <a href="https://newrelic.com/">New Relic</a>
+        </p>
+      </div>
+    </footer>
 
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue';
+import Clock from './components/Clock.vue'
+export default {
+  data() {
+    return {
+      trucks: {
+        parked: { value: 20 },
+        used: { value: 120 }
+      }
+    };
+  },
+      
+  created() {
+      console.log(Clock)
+        Clock.startInterval(this.trucks.parked, 3000, 1)
+        Clock.startInterval(this.trucks.used, 3000, 1)
+  },
+  }
 
-// export default {
-//   name: 'app',
-//   components: {
-//     HelloWorld,
-//   },
-// };
 </script>
 
 <style lang="stylus">
   #app
     max-width 700px
     margin auto
+
+  .logo
+    width: 72px;
+    margin: 24px auto 0;
+    display: table;
+
   .row
     display flex
     .column
@@ -116,11 +176,4 @@
       .image
         margin auto
 
-// #app
-//   font-family 'Avenir', Helvetica, Arial, sans-serif
-//   -webkit-font-smoothing antialiased
-//   -moz-osx-font-smoothing grayscale
-//   text-align center
-//   color #2c3e50
-//   margin-top 60px
 </style>
